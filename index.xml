@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Jane - A super concise theme for Hugo</title>
+    <title>小侃流年的博客</title>
     <link>http://localhost:1313/</link>
-    <description>Recent content on Jane - A super concise theme for Hugo</description>
+    <description>Recent content on 小侃流年的博客</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
+    <language>zh-cn</language>
     <lastBuildDate>Tue, 22 Oct 2019 13:45:41 +0800</lastBuildDate>
     
         <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
@@ -36,19 +36,8 @@
     
     <item>
       <title>Posts</title>
-      <link>http://localhost:1313/posts/</link>
-      <pubDate>Tue, 22 Oct 2019 13:45:41 +0800</pubDate>
-      
-      <guid>http://localhost:1313/posts/</guid>
-      
-        <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Posts</title>
       <link>http://localhost:1313/post/</link>
-      <pubDate>Mon, 04 Mar 2019 16:01:23 +0800</pubDate>
+      <pubDate>Tue, 22 Oct 2019 13:45:41 +0800</pubDate>
       
       <guid>http://localhost:1313/post/</guid>
       
