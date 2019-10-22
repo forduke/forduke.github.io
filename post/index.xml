@@ -17,7 +17,16 @@
       <pubDate>Tue, 22 Oct 2019 13:45:41 +0800</pubDate>
       
       <guid>http://localhost:1313/post/first-blog/</guid>
-      <description>第一篇博客 坚持下去！</description>
+      <description>开博大吉 坚持就是胜利！</description>
+    </item>
+    
+    <item>
+      <title>Hugo搭建博客和Github预览</title>
+      <link>http://localhost:1313/post/hugo/</link>
+      <pubDate>Tue, 22 Oct 2019 13:45:41 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/hugo/</guid>
+      <description>Hugo搭建博客和Github预览 一、使用Hugo快速搭建博客 Hugo官网 根据Quick Start操作，过程就不赘述了 先下载Hugo，我没有</description>
     </item>
     
   </channel>
