@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Html入门笔记 - 小侃流年的博客</title>
+  <title>HTML入门笔记 - 小侃流年的博客</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -23,7 +23,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="小侃流年" />
-  <meta name="description" content="Html入门笔记1 HTML是？ 上个世纪90年代由欧洲核子研究中心的物理学家蒂姆·伯纳斯-李（Tim Berners-Lee）发明，叫李爵士就行" />
+  <meta name="description" content="HTML入门笔记1 HTML是？ 上个世纪90年代由欧洲核子研究中心的物理学家蒂姆·伯纳斯-李（Tim Berners-Lee）发明，叫李爵士就行" />
 
   <meta name="keywords" content="Hugo, theme, jane" />
 
@@ -59,26 +59,26 @@
 
 
 
-<meta property="og:title" content="Html入门笔记" />
-<meta property="og:description" content="Html入门笔记1 HTML是？ 上个世纪90年代由欧洲核子研究中心的物理学家蒂姆·伯纳斯-李（Tim Berners-Lee）发明，叫李爵士就行" />
+<meta property="og:title" content="HTML入门笔记" />
+<meta property="og:description" content="HTML入门笔记1 HTML是？ 上个世纪90年代由欧洲核子研究中心的物理学家蒂姆·伯纳斯-李（Tim Berners-Lee）发明，叫李爵士就行" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://forduke.github.io/post/html-introduce/" />
 <meta property="article:published_time" content="2019-10-22T18:32:05+08:00" />
 <meta property="article:modified_time" content="2019-10-22T18:32:05+08:00" />
-<meta itemprop="name" content="Html入门笔记">
-<meta itemprop="description" content="Html入门笔记1 HTML是？ 上个世纪90年代由欧洲核子研究中心的物理学家蒂姆·伯纳斯-李（Tim Berners-Lee）发明，叫李爵士就行">
+<meta itemprop="name" content="HTML入门笔记">
+<meta itemprop="description" content="HTML入门笔记1 HTML是？ 上个世纪90年代由欧洲核子研究中心的物理学家蒂姆·伯纳斯-李（Tim Berners-Lee）发明，叫李爵士就行">
 
 
 <meta itemprop="datePublished" content="2019-10-22T18:32:05&#43;08:00" />
 <meta itemprop="dateModified" content="2019-10-22T18:32:05&#43;08:00" />
-<meta itemprop="wordCount" content="451">
+<meta itemprop="wordCount" content="618">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Html入门笔记"/>
-<meta name="twitter:description" content="Html入门笔记1 HTML是？ 上个世纪90年代由欧洲核子研究中心的物理学家蒂姆·伯纳斯-李（Tim Berners-Lee）发明，叫李爵士就行"/>
+<meta name="twitter:title" content="HTML入门笔记"/>
+<meta name="twitter:description" content="HTML入门笔记1 HTML是？ 上个世纪90年代由欧洲核子研究中心的物理学家蒂姆·伯纳斯-李（Tim Berners-Lee）发明，叫李爵士就行"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -340,7 +340,7 @@
           <article class="post bg-white">
     
     <header class="post-header">
-      <h1 class="post-title">Html入门笔记</h1>
+      <h1 class="post-title">HTML入门笔记</h1>
       
       <div class="post-meta">
         <time datetime="2019-10-22" class="post-time">
@@ -364,7 +364,7 @@
   <div class="post-toc-content">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#html入门笔记1">Html入门笔记1</a></li>
+<li><a href="#html入门笔记1">HTML入门笔记1</a></li>
 </ul>
 </nav>
   </div>
@@ -374,7 +374,7 @@
     <div class="post-content">
       
 
-<h1 id="html入门笔记1">Html入门笔记1</h1>
+<h1 id="html入门笔记1">HTML入门笔记1</h1>
 
 <ol>
 <li><p>HTML是？</p>
@@ -405,16 +405,52 @@
 <li><p>全局属性有哪些?</p>
 
 <ul>
-<li><p>我使用的chrome大概有这些，后面有常见的再补充</p>
+<li><p>class</p>
 
-<pre><code class="language-css">display: block;
-font-size: 2em;
-margin-block-start: 0.67em;
-margin-block-end: 0.67em;
-margin-inline-start: 0px;
-margin-inline-end: 0px;
-font-weight: bold;
-</code></pre></li>
+<ul>
+<li>类名</li>
+</ul></li>
+
+<li><p>contenteditable</p>
+
+<ul>
+<li>可编辑内容；</li>
+<li>head标签的内容不可见，但style标签可以放在body内，加上这个属性就可以编辑样式</li>
+</ul></li>
+
+<li><p>hidden</p>
+
+<ul>
+<li>隐藏标签内容</li>
+</ul></li>
+
+<li><p>id</p>
+
+<ul>
+<li>id如果重复出现，不会报错，尽量不用；</li>
+<li>#xxx  [ id=xxx ] ；</li>
+<li>id可以在JS里直接使用，xxx.style.border = &lsquo;1px solid red&rsquo; ；</li>
+<li>id不能和关键字（window.xxx）相同，否则无效</li>
+</ul></li>
+
+<li><p>style</p>
+
+<ul>
+<li>行内样式，参考优先级：</li>
+</ul></li>
+
+<li><p>tabindex</p>
+
+<ul>
+<li>控制键盘tab操作的顺序，响应键盘事件</li>
+<li>0是最后顺序，-1是跳过、不访问</li>
+</ul></li>
+
+<li><p>title</p>
+
+<ul>
+<li>鼠标放在内容上的提示</li>
+</ul></li>
 </ul></li>
 
 <li><p>常用的内容标签有哪些？</p>
@@ -499,6 +535,19 @@ font-weight: bold;
       
       <nav class="post-nav">
         
+          <a class="prev" href="/post/html-label-important/">
+            
+            <i class="iconfont">
+              <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
+</svg>
+
+            </i>
+            <span class="prev-text nav-default">HTML重点标签</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
         
           <a class="next" href="/post/hugo/">
             <span class="next-text nav-default">Hugo搭建博客和Github预览</span>
