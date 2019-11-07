@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Js on 小侃流年的博客</title>
+    <link>https://forduke.github.io/js/</link>
+    <description>Recent content in Js on 小侃流年的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 07 Nov 2019 13:37:51 +0800</lastBuildDate>
+    
+	<atom:link href="https://forduke.github.io/js/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Js Start</title>
+      <link>https://forduke.github.io/js/js-start/</link>
+      <pubDate>Thu, 07 Nov 2019 13:37:51 +0800</pubDate>
+      
+      <guid>https://forduke.github.io/js/js-start/</guid>
+      <description>111</description>
+    </item>
+    
+  </channel>
+</rss>
