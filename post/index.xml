@@ -17,7 +17,7 @@
       <pubDate>Tue, 19 Nov 2019 23:41:17 +0800</pubDate>
       
       <guid>https://forduke.github.io/post/js-grammar/</guid>
-      <description>JS 语法</description>
+      <description>一、关于表达式和语句 语句 为了完成某种任务而进行的操作。例：let a = 1 + 2; 表达式 为了得到返回值的计算式。例：1 + 2 语句和表达式的区别在于，前</description>
     </item>
     
     <item>
