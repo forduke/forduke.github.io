@@ -6,10 +6,19 @@
     <description>Recent content in Posts on 小侃流年的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 19 Nov 2019 23:41:17 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 26 Nov 2019 17:47:09 +0800</lastBuildDate>
     
 	<atom:link href="https://forduke.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>JS 对象基本用法</title>
+      <link>https://forduke.github.io/post/js-object/</link>
+      <pubDate>Tue, 26 Nov 2019 17:47:09 +0800</pubDate>
+      
+      <guid>https://forduke.github.io/post/js-object/</guid>
+      <description>一、声明对象的两种语法 let obj1 = { &#39;name&#39;: &#39;zhang&#39;, &#39;age&#39;: 24 } // 或 let obj2 = new Object({ &#39;name&#39;: &#39;zhang&#39;, &#39;age&#39;: 24, &#39;gf&#39;: undefined }) 二、如何删除对象的key(属性),value(值) delete obj1.name // 或 delete obj1[&#39;name&#39;] 即可删除o</description>
+    </item>
     
     <item>
       <title>Js Grammar</title>
