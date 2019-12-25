@@ -6,10 +6,19 @@
     <description>Recent content in Posts on 小侃流年的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 26 Nov 2019 17:47:09 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 25 Dec 2019 17:26:17 +0800</lastBuildDate>
     
 	<atom:link href="https://forduke.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>初学jQuery的一些理解</title>
+      <link>https://forduke.github.io/post/jquery/</link>
+      <pubDate>Wed, 25 Dec 2019 17:26:17 +0800</pubDate>
+      
+      <guid>https://forduke.github.io/post/jquery/</guid>
+      <description>之前只是了解一点jQuery的用法，都是现用现查 1.jQuery 如何获取元素 $(&amp;rsquo;*&amp;lsquo;) // 选择所有元素，除非它自己使用，否则不建议使用，速度极慢 $(&amp;lsquo;class&amp;rsquo;) // 选择类名相同的元</description>
+    </item>
     
     <item>
       <title>JS 对象基本用法</title>
