@@ -6,10 +6,19 @@
     <description>Recent content in Posts on 小侃流年的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 10 Jan 2020 09:43:50 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 13 Jan 2020 15:17:00 +0800</lastBuildDate>
     
 	<atom:link href="https://forduke.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Vue初接触</title>
+      <link>https://forduke.github.io/post/vue-introduce/</link>
+      <pubDate>Mon, 13 Jan 2020 15:17:00 +0800</pubDate>
+      
+      <guid>https://forduke.github.io/post/vue-introduce/</guid>
+      <description>1.完整版和非完整版两个版本介绍 截取CDN上vue的最新版本 完整版 非完整版 引用方方老师的总结，两者的区别，个人看来就是如果项目对客户体验非常</description>
+    </item>
     
     <item>
       <title>浅谈MVC</title>
