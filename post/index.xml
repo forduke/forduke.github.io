@@ -6,10 +6,19 @@
     <description>Recent content in Posts on 小侃流年的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 13 Jan 2020 15:17:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 16 Jan 2020 16:49:01 +0800</lastBuildDate>
     
 	<atom:link href="https://forduke.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Vue .sync 修饰符</title>
+      <link>https://forduke.github.io/post/vue-sync/</link>
+      <pubDate>Thu, 16 Jan 2020 16:49:01 +0800</pubDate>
+      
+      <guid>https://forduke.github.io/post/vue-sync/</guid>
+      <description>.sync 修饰符的一点理解 平时开发可能会对一个prop的数据进行“双向绑定”，但官方文档上介绍，真正的双向绑定可能会带来维护的问题，因为子组件可以修</description>
+    </item>
     
     <item>
       <title>Vue初接触</title>

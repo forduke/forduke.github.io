@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>小侃流年的博客</title>
+  <title>Vue .sync 修饰符 - 小侃流年的博客</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -23,7 +23,8 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="小侃流年" />
-  <meta name="description" content="小侃流年的博客" />
+  <meta name="description" content=".sync 修饰符的一点理解 平时开发可能会对一个prop的数据进行“双向绑定”，但官方文档上介绍，真正的双向绑定可能会带来维护的问题，因为子组件可以修" />
+
   <meta name="keywords" content="Hugo, theme, jane" />
 
 
@@ -34,8 +35,8 @@
 <meta name="generator" content="Hugo 0.59.0" />
 
 
-<link rel="canonical" href="https://forduke.github.io/" />
-<link href="/index.xml" rel="alternate" type="application/rss+xml" title="小侃流年的博客" />
+<link rel="canonical" href="https://forduke.github.io/post/vue-sync/" />
+
 
 
 
@@ -58,18 +59,26 @@
 
 
 
-<meta property="og:title" content="小侃流年的博客" />
-<meta property="og:description" content="小侃流年的博客" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://forduke.github.io/" />
+<meta property="og:title" content="Vue .sync 修饰符" />
+<meta property="og:description" content=".sync 修饰符的一点理解 平时开发可能会对一个prop的数据进行“双向绑定”，但官方文档上介绍，真正的双向绑定可能会带来维护的问题，因为子组件可以修" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forduke.github.io/post/vue-sync/" />
+<meta property="article:published_time" content="2020-01-16T16:49:01+08:00" />
+<meta property="article:modified_time" content="2020-01-16T16:49:01+08:00" />
+<meta itemprop="name" content="Vue .sync 修饰符">
+<meta itemprop="description" content=".sync 修饰符的一点理解 平时开发可能会对一个prop的数据进行“双向绑定”，但官方文档上介绍，真正的双向绑定可能会带来维护的问题，因为子组件可以修">
 
-<meta property="og:updated_time" content="2020-01-16T16:49:01+08:00" />
-<meta itemprop="name" content="小侃流年的博客">
-<meta itemprop="description" content="小侃流年的博客">
 
+<meta itemprop="datePublished" content="2020-01-16T16:49:01&#43;08:00" />
+<meta itemprop="dateModified" content="2020-01-16T16:49:01&#43;08:00" />
+<meta itemprop="wordCount" content="453">
+
+
+
+<meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="小侃流年的博客"/>
-<meta name="twitter:description" content="小侃流年的博客"/>
+<meta name="twitter:title" content="Vue .sync 修饰符"/>
+<meta name="twitter:description" content=".sync 修饰符的一点理解 平时开发可能会对一个prop的数据进行“双向绑定”，但官方文档上介绍，真正的双向绑定可能会带来维护的问题，因为子组件可以修"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -236,7 +245,7 @@
   <ul id="menu" class="menu">
     
     
-        <li class="menu-item active">
+        <li class="menu-item">
         
           
           
@@ -328,161 +337,162 @@
     <main id="main" class="main bg-llight">
       <div class="content-wrapper">
         <div id="content" class="content container">
-          
-<section id="posts" class="posts">
-  
-  
+          <article class="post bg-white">
     
-  
-  
-  
-    <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
+    <header class="post-header">
+      <h1 class="post-title">Vue .sync 修饰符</h1>
       
-      <a class="post-link" href="/post/jquery/">初学jQuery的一些理解</a>
-    </h1>
+      <div class="post-meta">
+        <time datetime="2020-01-16" class="post-time">
+          2020-01-16
+        </time>
+        
+        
+
+        
+        
+
+        
+        
+      </div>
+    </header>
+
     
-    <div class="post-meta">
-      <time datetime="2019-12-25" class="post-time">
-        2019-12-25
-      </time>
-      
-      
-      
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
     
-    <div class="post-summary">
-      之前只是了解一点jQuery的用法，都是现用现查 1.jQuery 如何获取元素 $(&rsquo;*&lsquo;) // 选择所有元素，除非它自己使用，否则不建议使用，速度极慢 $(&lsquo;class&rsquo;) // 选择类名相同的元
-    </div>
-    <div class="read-more">
-      <a href="/post/jquery/" class="read-more-link">阅读全文</a>
-    </div>
-    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#sync-修饰符的一点理解">.sync 修饰符的一点理解</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
   </div>
-</article>
+</div>
 
-  
-    <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-      <a class="post-link" href="/post/js-object/">JS 对象基本用法</a>
-    </h1>
     
-    <div class="post-meta">
-      <time datetime="2019-11-26" class="post-time">
-        2019-11-26
-      </time>
+    <div class="post-content">
       
-      
-      
-      
+
+<h3 id="sync-修饰符的一点理解">.sync 修饰符的一点理解</h3>
+
+<p>平时开发可能会对一个prop的数据进行“双向绑定”，但官方文档上介绍，真正的双向绑定可能会带来维护的问题，因为子组件可以修改父组件，但这两处都没有明显的修改痕迹。</p>
+
+<p>所以官方推荐使用 update:propName 的模式触发事件。</p>
+
+<p>方方老师的参考示例：</p>
+
+<pre><code class="language-html">&lt;!-- App --&gt;
+&lt;template&gt;
+  &lt;div&gt;
+    &lt;child :money=&quot;total&quot; v-on:useMoney=&quot;total = $event&quot;/&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+import Child from &quot;./child.vue&quot;;
+export default {
+  data() {
+    return {
+      total: 10000
+    } 
+  }  
+}
+&lt;/script&gt;
+&lt;!-- Child--&gt;
+&lt;template&gt;
+  &lt;div class=&quot;child&quot;&gt;
+    &lt;button @click=&quot;$emit('update:money', money - 100)&quot;/&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+export default {
+  props: ['money']  
+}
+&lt;/script&gt;
+</code></pre>
+
+<p>这样在子组件中 money 进行修改时，就会同时更新 App 中的 total 数据。</p>
+
+<p>但 App 中这段文字实在是太过繁琐，而且这个功能又要经常被使用。</p>
+
+<pre><code class="language-html">&lt;child :money=&quot;total&quot; v-on:useMoney=&quot;total = $event&quot;/&gt;
+</code></pre>
+
+<p>所以就有了 .sync 修饰符 这个语法糖</p>
+
+<pre><code class="language-html">&lt;child :money.sync=&quot;total&quot;/&gt;
+&lt;!-- 等价于--&gt;
+&lt;child :money=&quot;total&quot; v-on:useMoney=&quot;total = $event&quot;/&gt;
+</code></pre>
+
+<p><strong>简单来讲就是: .sync 是一个语法糖，当一个子组件改变了prop的值时，这个变化也会同步到父组件中进行绑定。</strong></p>
+
+<p>最后要注意两点：</p>
+
+<pre><code>- .sync 修饰符的 v-bind 不能和表达式一起使用 (例如 v-bind:title.sync=”doc.title + ‘!’” 是无效的)。
+
+- 将 v-bind.sync 用在一个字面量的对象上，例如 v-bind.sync=”{ title: doc.title }”，是无法正常工作的，因为在解析一个像这样的复杂表达式的时候，有很多边缘情况需要考虑。
+</code></pre>
+
     </div>
-  </header>
-  
-  <div class="post-content">
+
     
-    <div class="post-summary">
-      一、声明对象的两种语法 let obj1 = { 'name': 'zhang', 'age': 24 } // 或 let obj2 = new Object({ 'name': 'zhang', 'age': 24, 'gf': undefined }) 二、如何删除对象的key(属性),value(值) delete obj1.name // 或 delete obj1['name'] 即可删除o
-    </div>
-    <div class="read-more">
-      <a href="/post/js-object/" class="read-more-link">阅读全文</a>
-    </div>
     
-  </div>
-</article>
 
-  
-    <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-      <a class="post-link" href="/post/js-grammar/">Js Grammar</a>
-    </h1>
+
     
-    <div class="post-meta">
-      <time datetime="2019-11-19" class="post-time">
-        2019-11-19
-      </time>
-      
-      
-      
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
     
-    <div class="post-summary">
-      一、关于表达式和语句 语句 为了完成某种任务而进行的操作。例：let a = 1 + 2; 表达式 为了得到返回值的计算式。例：1 + 2 语句和表达式的区别在于，前
-    </div>
-    <div class="read-more">
-      <a href="/post/js-grammar/" class="read-more-link">阅读全文</a>
-    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/vue-introduce/">
+            <span class="next-text nav-default">Vue初接触</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            
+            <i class="iconfont">
+              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+            </i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
     
-  </div>
-</article>
 
   
-</section>
-
-
-
-
-
-
-  
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-  <nav class="pagination">
-    <ul>
-      
-      <li >
-        <a href="/">1</a>
-      </li>
-      
-      <li  class="active" >
-        <a href="/page/2/">2</a>
-      </li>
-      
-      <li >
-        <a href="/page/3/">3</a>
-      </li>
-      
-      <li >
-        <a href="/page/4/">4</a>
-      </li>
-      
-      <li >
-        <a href="/page/5/">5</a>
-      </li>
-      
-    </ul>
-  </nav>
-
-  
-  
-
-
-
-
 
         </div>
       </div>
