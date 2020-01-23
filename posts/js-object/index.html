@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>JS 对象基本用法 :: 小侃流年的博客 — 小侃流年的博客</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="一、声明对象的两种语法 let obj1 = { &#39;name&#39;: &#39;zhang&#39;, &#39;age&#39;: 24 } // 或 let obj2 = new Object({ &#39;name&#39;: &#39;zhang&#39;, &#39;age&#39;: 24, &#39;gf&#39;: undefined })  二、如何删除对象的key(属性),value(值) delete obj1.name // 或 delete obj1[&#39;name&#39;]   即可删除obj的xxx的key 重复使用delete不会报错，会返回true  判断object是否包含相关key
+&#39;name&#39; in obj2 === true  object某个key的value可能为undefined，所以不能只通过判断value是否存在，来判断key是否存在
+obj1.gf === undefined &#39;gf&#39; in obj1 &amp;amp;&amp;amp; obj1.gf === undefined // 对比 obj2.gf === undefined &#39;gf&#39; in obj2 &amp;amp;&amp;amp; obj2.gf === undefined  三、如何查看对象的key(属性) // 查看自身所有属性 Object."/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="https://forduke.github.io/posts/js-object/" />
+
+
+
+
+
+<link rel="stylesheet" href="https://forduke.github.io/assets/style.css">
+
+
+<link rel="stylesheet" href="https://forduke.github.io/style.css">
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://forduke.github.io/img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="https://forduke.github.io/img/favicon.png">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="JS 对象基本用法"/>
+<meta name="twitter:description" content="一、声明对象的两种语法 let obj1 = { &#39;name&#39;: &#39;zhang&#39;, &#39;age&#39;: 24 } // 或 let obj2 = new Object({ &#39;name&#39;: &#39;zhang&#39;, &#39;age&#39;: 24, &#39;gf&#39;: undefined })  二、如何删除对象的key(属性),value(值) delete obj1.name // 或 delete obj1[&#39;name&#39;]   即可删除obj的xxx的key 重复使用delete不会报错，会返回true  判断object是否包含相关key
+&#39;name&#39; in obj2 === true  object某个key的value可能为undefined，所以不能只通过判断value是否存在，来判断key是否存在
+obj1.gf === undefined &#39;gf&#39; in obj1 &amp;&amp; obj1.gf === undefined // 对比 obj2.gf === undefined &#39;gf&#39; in obj2 &amp;&amp; obj2.gf === undefined  三、如何查看对象的key(属性) // 查看自身所有属性 Object."/>
+
+
+
+<meta property="og:title" content="JS 对象基本用法" />
+<meta property="og:description" content="一、声明对象的两种语法 let obj1 = { &#39;name&#39;: &#39;zhang&#39;, &#39;age&#39;: 24 } // 或 let obj2 = new Object({ &#39;name&#39;: &#39;zhang&#39;, &#39;age&#39;: 24, &#39;gf&#39;: undefined })  二、如何删除对象的key(属性),value(值) delete obj1.name // 或 delete obj1[&#39;name&#39;]   即可删除obj的xxx的key 重复使用delete不会报错，会返回true  判断object是否包含相关key
+&#39;name&#39; in obj2 === true  object某个key的value可能为undefined，所以不能只通过判断value是否存在，来判断key是否存在
+obj1.gf === undefined &#39;gf&#39; in obj1 &amp;&amp; obj1.gf === undefined // 对比 obj2.gf === undefined &#39;gf&#39; in obj2 &amp;&amp; obj2.gf === undefined  三、如何查看对象的key(属性) // 查看自身所有属性 Object." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forduke.github.io/posts/js-object/" />
+<meta property="article:published_time" content="2019-11-26T17:47:09+08:00" />
+<meta property="article:modified_time" content="2019-11-26T17:47:09+08:00" /><meta property="og:site_name" content="小侃流年的博客" />
+
+
+
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">小侃流年的博客</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/posts/about/">About</a></li>
+        
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+      
+        <ul class="menu__sub-inner">
+          <li class="menu__sub-inner-more-trigger">
+            Show more
+            <span class="menu__sub-inner-more-trigger-icon"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+</svg>
+</span>
+          </li>
+
+          <ul class="menu__sub-inner-more hidden">
+            
+              
+                <li><a href="/showcase">Showcase</a></li>
+              
+            
+          </ul>
+        </ul>
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/posts/about/">About</a></li>
+      
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/showcase">Showcase</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  <div class="post">
+    <h2 class="post-title"><a href="https://forduke.github.io/posts/js-object/">JS 对象基本用法</a></h2>
+    <div class="post-meta">
+      
+        <span class="post-date">
+            2019-11-26
+        </span>
+      
+      
+      
+    </div>
+
+    
+
+    
+
+    <div class="post-content">
+      
+
+<h3 id="一-声明对象的两种语法">一、声明对象的两种语法</h3>
+
+<pre><code class="language-javascript">let obj1 = {
+	'name': 'zhang',
+	'age': 24
+}
+// 或
+let obj2 = new Object({
+	'name': 'zhang',
+	'age': 24,
+  'gf': undefined
+})
+</code></pre>
+
+<h3 id="二-如何删除对象的key-属性-value-值">二、如何删除对象的key(属性),value(值)</h3>
+
+<pre><code class="language-javascript">delete obj1.name
+// 或
+delete obj1['name']
+</code></pre>
+
+<ul>
+<li>即可删除obj的xxx的key</li>
+<li>重复使用delete不会报错，会返回true</li>
+</ul>
+
+<p>判断object是否包含相关key</p>
+
+<pre><code class="language-javascript">'name' in obj2 === true
+</code></pre>
+
+<p>object某个key的value可能为undefined，所以不能只通过判断value是否存在，来判断key是否存在</p>
+
+<pre><code class="language-javascript">obj1.gf === undefined
+'gf' in obj1 &amp;&amp; obj1.gf === undefined
+// 对比
+obj2.gf === undefined
+'gf' in obj2 &amp;&amp; obj2.gf === undefined
+</code></pre>
+
+<p><img src="/image/js-object/img-1.png" alt="对比图" /></p>
+
+<h3 id="三-如何查看对象的key-属性">三、如何查看对象的key(属性)</h3>
+
+<pre><code class="language-javascript">// 查看自身所有属性
+Object.keys(obj1)
+
+// 查看自身+共有属性
+console.dir(obj1)
+
+// 判断一个属性是自身的还是共有的
+obj1.hasOwnProperty('toString')
+</code></pre>
+
+<p><img src="/image/js-object/img-2.png" alt="查看属性" /></p>
+
+<h3 id="四-如何修改或增加对象的key-属性">四、如何修改或增加对象的key(属性)</h3>
+
+<ol>
+<li><p>直接赋值</p>
+
+<pre><code class="language-javascript">let obj = {
+'name': 'zhang'
+}
+</code></pre></li>
+
+<li><p>批量赋值</p>
+
+<pre><code class="language-javascript">Object.assign(obj, {
+'age': 24,
+gender: 'name'
+})
+</code></pre></li>
+</ol>
+
+<p><img src="/image/js-object/img-3.png" alt="赋值" /></p>
+
+<ol>
+<li>关于公共属性的增加这里不是很熟练，先留个坑</li>
+</ol>
+
+<h3 id="五-name-in-obj和obj-hasownproperty-name-的区别">五、&rsquo;name&rsquo; in obj和obj.hasOwnProperty(&lsquo;name&rsquo;) 的区别</h3>
+
+<p><img src="/image/js-object/img-4.png" alt="属性" /></p>
+
+<ul>
+<li>&lsquo;name&rsquo; in obj</li>
+</ul>
+
+<p>判断 obj 对象里是否有 name 这个属性，包括原型链中的属性</p>
+
+<ul>
+<li>obj.hasOwnProperty(&lsquo;name&rsquo;)</li>
+</ul>
+
+<p>只判断 obj 自身是否有 name 这个属性，不包括原型链</p>
+
+<p><img src="/image/js-object/img-5.png" alt="比较" /></p>
+
+    </div>
+    
+      
+        <div class="pagination">
+          <div class="pagination__title">
+            <span class="pagination__title-h">Read other posts</span>
+            <hr />
+          </div>
+          <div class="pagination__buttons">
+            
+              <span class="button previous">
+                <a href="https://forduke.github.io/posts/jquery/">
+                  <span class="button__icon">←</span>
+                  <span class="button__text">初学jQuery的一些理解</span>
+                </a>
+              </span>
+            
+            
+              <span class="button next">
+                <a href="https://forduke.github.io/posts/js-grammar/">
+                  <span class="button__text">Js Grammar</span>
+                  <span class="button__icon">→</span>
+                </a>
+              </span>
+            
+          </div>
+        </div>
+      
+    
+    
+
+    
+      
+        
+
+      
+    
+    
+    </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">小侃流年的博客</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+      <div class="copyright">
+        <span>© 2020 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span>
+      </div>
+    
+  </div>
+</footer>
+
+<script src="https://forduke.github.io/assets/main.js"></script>
+<script src="https://forduke.github.io/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

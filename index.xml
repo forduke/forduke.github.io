@@ -1,48 +1,229 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>小侃流年的博客</title>
     <link>https://forduke.github.io/</link>
     <description>Recent content on 小侃流年的博客</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
-    <lastBuildDate>Thu, 16 Jan 2020 17:53:56 +0800</lastBuildDate>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 16 Jan 2020 16:49:01 +0800</lastBuildDate>
     
-        <atom:link href="https://forduke.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://forduke.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>About</title>
-      <link>https://forduke.github.io/about/</link>
-      <pubDate>Sun, 20 Aug 2017 21:38:52 +0800</pubDate>
+      <title>Vue .sync 修饰符</title>
+      <link>https://forduke.github.io/post/vue-sync/</link>
+      <pubDate>Thu, 16 Jan 2020 16:49:01 +0800</pubDate>
       
-      <guid>https://forduke.github.io/about/</guid>
-      
-        <description>&lt;p&gt;Hugo is a static site engine written in Go.&lt;/p&gt;
-
-&lt;p&gt;It makes use of a variety of open source projects including:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/spf13/cobra&#34;&gt;Cobra&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/spf13/viper&#34;&gt;Viper&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/spf13/jWalterWeatherman&#34;&gt;J Walter Weatherman&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/spf13/cast&#34;&gt;Cast&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Learn more and contribute on &lt;a href=&#34;https://github.com/gohugoio&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
-</description>
-      
+      <guid>https://forduke.github.io/post/vue-sync/</guid>
+      <description>.sync 修饰符的一点理解 平时开发可能会对一个prop的数据进行“双向绑定”，但官方文档上介绍，真正的双向绑定可能会带来维护的问题，因为子组件可以修改父组件，但这两处都没有明显的修改痕迹。
+所以官方推荐使用 update:propName 的模式触发事件。
+方方老师的参考示例：
+&amp;lt;!-- App --&amp;gt; &amp;lt;template&amp;gt; &amp;lt;div&amp;gt; &amp;lt;child :money=&amp;quot;total&amp;quot; v-on:useMoney=&amp;quot;total = $event&amp;quot;/&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/template&amp;gt; &amp;lt;script&amp;gt; import Child from &amp;quot;./child.vue&amp;quot;; export default { data() { return { total: 10000 } } } &amp;lt;/script&amp;gt; &amp;lt;!-- Child--&amp;gt; &amp;lt;template&amp;gt; &amp;lt;div class=&amp;quot;child&amp;quot;&amp;gt; &amp;lt;button @click=&amp;quot;$emit(&#39;update:money&#39;, money - 100)&amp;quot;/&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/template&amp;gt; &amp;lt;script&amp;gt; export default { props: [&#39;money&#39;] } &amp;lt;/script&amp;gt;  这样在子组件中 money 进行修改时，就会同时更新 App 中的 total 数据。
+但 App 中这段文字实在是太过繁琐，而且这个功能又要经常被使用。
+&amp;lt;child :money=&amp;quot;total&amp;quot; v-on:useMoney=&amp;quot;total = $event&amp;quot;/&amp;gt;  所以就有了 .</description>
     </item>
     
     <item>
-      <title>Posts</title>
-      <link>https://forduke.github.io/post/</link>
-      <pubDate>Thu, 16 Jan 2020 17:53:56 +0800</pubDate>
+      <title>Vue Data</title>
+      <link>https://forduke.github.io/post/vue-data/</link>
+      <pubDate>Wed, 15 Jan 2020 17:53:56 +0800</pubDate>
       
-      <guid>https://forduke.github.io/post/</guid>
+      <guid>https://forduke.github.io/post/vue-data/</guid>
+      <description>数据响应式 开始学习Vue中的data，有个叫数据响应式的名词，响应式字面理解就是
+ Hi~ How are you? Fine, thank you, and you? 就像我和你打招呼，你回应我了，就是响应式了。  Vue2 中 通过Object.defineProperty来实现数据响应式。
+当把一个普通的 JavaScript 对象传入 Vue 实例作为 data 选项，Vue 将遍历此对象所有的属性，并使用 Object.defineProperty 把这些属性全部转为 getter/setter。
+由于 Vue 会在初始化实例时对属性执行 getter/setter 转化，所以属性必须在 data 对象上存在才能让 Vue 将它转换为响应式的。
+const vm = new Vue({ data:{ a:1 } }) // `vm.a` 是响应式的 vm.b = 2 // `vm.b` 是非响应式的  对于已经创建的实例，Vue 不允许动态添加根级别的响应式属性。 但可以使用 Vue.set(object, propertyName, value) 方法向嵌套对象添加响应式属性。
+Vue.set(vm.obj, &#39;n&#39;, 2)  还可以使用 vm.$set 实例方法，这也是全局 Vue.</description>
+    </item>
+    
+    <item>
+      <title>Vue初接触</title>
+      <link>https://forduke.github.io/post/vue-introduce/</link>
+      <pubDate>Mon, 13 Jan 2020 15:17:00 +0800</pubDate>
       
-        <description></description>
+      <guid>https://forduke.github.io/post/vue-introduce/</guid>
+      <description>1.完整版和非完整版两个版本介绍 截取CDN上vue的最新版本 完整版 非完整版
+引用方方老师的总结，两者的区别，个人看来就是如果项目对客户体验非常看重，那么就使用非完整版，让工程师完成复杂的那部分。否则就是用完整版，简单粗暴。
+2.template 和 render 怎么用 初学Vue这两者的区别还不是太理解，个人理解大概意思是从示例上可以看出，非完整版不能直接渲染数据，不能在template上加入html。 完整版就像官网给出的示例一样开发就可以，不需要render。 template的用法我初步写了个demo，如下图 render会把template里的html编译 3.如何用 codesandbox.io 写 Vue 代码 codesandbox官网 这里就可以正常使用了，网速慢可能不会第一时间展示出来，写好的代码可以在左上角的File菜单中Export to Zip导出来</description>
+    </item>
+    
+    <item>
+      <title>浅谈MVC</title>
+      <link>https://forduke.github.io/post/mvc/</link>
+      <pubDate>Fri, 10 Jan 2020 09:43:50 +0800</pubDate>
       
+      <guid>https://forduke.github.io/post/mvc/</guid>
+      <description>1.MVC 的三个对象。 MVC是一种架构设计模式，没有严格的定义
+M: Model(数据模型)负责操作所有数据 V: View(试图)负责所有UI界面 C: Controller(控制器)负责其他  个人理解就是：
+(V)点击事件 → &amp;copy;控制器做出相应操作 → (M)更新数据
+(V)输入数据 → (M)更新数据，通知&amp;copy; → &amp;copy;控制器相应操作 → (M)更新数据
+2.EventBus 的部分 API 和作用 根据方方老师的讲解和谷歌了下，没找到详解，大概理解event bus 是一个概念词：事件总栈的意思。把所有的API都聚合在一起调用。 打印了$(window)，解释了部分这几天用上的API
+children 获得匹配元素集合中每个元素的子元素，选择器选择性筛选。 siblings 获得匹配元素集合中每个元素的兄弟元素,可以提供一个可选的选择器。 appendTo 将匹配的元素插入到目标元素的最后面 on 监听事件 trigger 触发事件  3.表驱动编程？ 简单讲是指用查表的方法获取值。
+数值不多的时候我们可以用逻辑语句(if 或case)的方法来获取值,但随着数值的增多逻辑语句就会越来越长,此时表驱动法的优势就显现出来。
+例如:根据月份获取天数
+let mouth; if (mouth === 1) { return 31; } else if (mouth === 2) { return 28; }else if (mouth === 3) { return 31; } // .</description>
+    </item>
+    
+    <item>
+      <title>初学jQuery的一些理解</title>
+      <link>https://forduke.github.io/post/jquery/</link>
+      <pubDate>Wed, 25 Dec 2019 17:26:17 +0800</pubDate>
+      
+      <guid>https://forduke.github.io/post/jquery/</guid>
+      <description>之前只是了解一点jQuery的用法，都是现用现查
+1.jQuery 如何获取元素  $(&amp;rsquo;*&amp;lsquo;) // 选择所有元素，除非它自己使用，否则不建议使用，速度极慢 $(&amp;lsquo;class&amp;rsquo;) // 选择类名相同的元素 $(&amp;lsquo;element&amp;rsquo;) // 选择所有符合的DOM节点的标签 $(&amp;lsquo;#id&amp;rsquo;) // 选择第一个该id的DOM元素 $(&amp;lsquo;input[name=first]&amp;lsquo;) // 选择name属性等于first的input元素
+// 还有部分jQuery特有的选择器，暂时不太了解   2.jQuery 的链式操作是怎样的 选中网页元素以后，可以对它进行一系列操作，并且所有操作可以连接在一起，以链条的形式写出来
+$(&#39;div&#39;).find(&#39;#test&#39;).addClass(&#39;red&#39;);  分解开来，就是下面这样：
+$(&#39;div&#39;) //找到div元素 .find(&#39;#test&#39;) //选择其中id为test的元素 .addClass(&#39;red&#39;) //新增class为red  还有一个回退操作，没用过，以后再写上
+.end()  3.jQuery 如何创建元素 创建新元素只要把新元素直接传入jQuery的构造函数就行了：
+$(&#39;&amp;lt;p&amp;gt;Hello&amp;lt;/p&amp;gt;&#39;); $(&#39;&amp;lt;li class=&amp;quot;new&amp;quot;&amp;gt;new list item&amp;lt;/li&amp;gt;&#39;); $(&#39;ul&#39;).append(&#39;&amp;lt;li&amp;gt;list item&amp;lt;/li&amp;gt;&#39;);  4.jQuery 如何移动元素 移动元素。
+第一种方法是使用.insertAfter()，把div元素移动p元素后面：
+$(&#39;div&#39;).insertAfter($(&#39;p&#39;));  第二种方法是使用.after()，把p元素加到div元素前面：
+$(&#39;p&#39;).after($(&#39;div&#39;));  这两种方法的看上去差不多。实际上它们那返回的元素不一样。第一种方法返回div元素，第二种方法返回p元素。
+使用这种模式的操作方法，一共有四对：
+.insertAfter()和.after()：在现存元素的外部，从后面插入元素 .insertBefore()和.before()：在现存元素的外部，从前面插入元素 .appendTo()和.append()：在现存元素的内部，从后面插入元素 .prependTo()和.prepend()：在现存元素的内部，从前面插入元素  以上部分参考阮一峰老师教程，博客只个人练习用</description>
+    </item>
+    
+    <item>
+      <title>JS 对象基本用法</title>
+      <link>https://forduke.github.io/post/js-object/</link>
+      <pubDate>Tue, 26 Nov 2019 17:47:09 +0800</pubDate>
+      
+      <guid>https://forduke.github.io/post/js-object/</guid>
+      <description>一、声明对象的两种语法 let obj1 = { &#39;name&#39;: &#39;zhang&#39;, &#39;age&#39;: 24 } // 或 let obj2 = new Object({ &#39;name&#39;: &#39;zhang&#39;, &#39;age&#39;: 24, &#39;gf&#39;: undefined })  二、如何删除对象的key(属性),value(值) delete obj1.name // 或 delete obj1[&#39;name&#39;]   即可删除obj的xxx的key 重复使用delete不会报错，会返回true  判断object是否包含相关key
+&#39;name&#39; in obj2 === true  object某个key的value可能为undefined，所以不能只通过判断value是否存在，来判断key是否存在
+obj1.gf === undefined &#39;gf&#39; in obj1 &amp;amp;&amp;amp; obj1.gf === undefined // 对比 obj2.gf === undefined &#39;gf&#39; in obj2 &amp;amp;&amp;amp; obj2.gf === undefined  三、如何查看对象的key(属性) // 查看自身所有属性 Object.</description>
+    </item>
+    
+    <item>
+      <title>Js Grammar</title>
+      <link>https://forduke.github.io/post/js-grammar/</link>
+      <pubDate>Tue, 19 Nov 2019 23:41:17 +0800</pubDate>
+      
+      <guid>https://forduke.github.io/post/js-grammar/</guid>
+      <description>一、关于表达式和语句 语句
+为了完成某种任务而进行的操作。例：let a = 1 + 2;
+表达式
+为了得到返回值的计算式。例：1 + 2
+语句和表达式的区别在于，前者主要为了进行某种操作，一般不需要返回值；后者则是为了得到返回值，一定会返回一个值。
+二、标识符的规则 标识符
+是用来识别各种值的合法名称。最常见的是变量名，还有函数名。区分大小写。
+ 第一个字符，可以是任意 Unicode 字母（包括英文字母和其他语言的字母），以及美元符号（\$）和下划线（_）。 第二个字符及后面的字符，除了 Unicode 字母、美元符号和下划线，还可以用数字 0-9。  三、if else 语句 if
+if 结构先判断一个表达式的布尔值，然后根据布尔值的真伪，执行不同的语句。所谓布尔值，指的是 JavaScript 的两个特殊值，true 表示真，false 表示伪。
+if else
+if 判断不满足条件时，就执行 else 里的代码。 多个 if else 可以连起来写。
+if (a === 0) { // ... } else if (a === 1) { // ... } else if (a === 2) { // .</description>
+    </item>
+    
+    <item>
+      <title>JS 概览</title>
+      <link>https://forduke.github.io/post/js-start/</link>
+      <pubDate>Thu, 07 Nov 2019 13:37:51 +0800</pubDate>
+      
+      <guid>https://forduke.github.io/post/js-start/</guid>
+      <description>学习到JS了，工作这一年也没怎么好好认真看过红宝书或JS基础之类的。这次会认真学习。亡羊补牢为时不晚
+一、JavaScript 的历史 1995年5月，网景公司做出决策，未来的网页脚本语言必须&amp;rdquo;看上去与Java足够相似&amp;rdquo;，但是比Java简单，使得非专业的网页作者也能很快上手。
+34岁的系统程序员Brendan Eich为了应付公司安排的任务，他只用10天时间就把Javascript设计出来了。
+Javascript语言实际上是两种语言风格的混合产物&amp;mdash;-（简化的）函数式编程+（简化的）面向对象编程。这是由Brendan Eich（函数式编程）与网景公司（面向对象编程）共同决定的。 摘自阮一峰老师写的简介：Javascript诞生记
+它支持面向对象编程，命令式编程，以及函数式编程。 现在经由ECMA（欧洲电脑制造商协会）通过ECMAScript实现语言的标准化。
+一般来说，完整的JavaScript包括以下几个部分：
+ ECMAScript，描述了该语言的语法和基本对象 文档对象模型（DOM），描述处理网页内容的方法和接口 浏览器对象模型（BOM），描述与浏览器进行交互的方法和接口  JavaScript的基本特点如下：
+ 是一种解释性脚本语言（代码不进行预编译）。 主要用来向HTML页面添加交互行为。 可以直接嵌入HTML页面，但写成单独的js文件有利于结构和行为的分离。  JavaScript常用来完成以下任务：
+ 嵌入动态文本于HTML页面 对浏览器事件作出响应 读写HTML元素 在数据被提交到服务器之前验证数据 检测访客的浏览器信息 控制cookies，包括创建和修改等   一、JavaScript 的缺陷 JavaScript的设计阶段过于仓促
+Javascript的设计，其实只用了十天。初衷是为了解决一些简单的网页互动（比如，检查&amp;rdquo;用户名&amp;rdquo;是否填写），并没有考虑复杂应用的需要。
+ 不适合开发大型程序
+ Javascript没有名称空间（namespace），很难模块化；没有如何将代码分布在多个文件的规范；允许同名函数的重复定义，后面的定义可以覆盖前面的定义，很不利于模块化加载。  非常小的标准库
+ Javascript提供的标准函数库非常小，只能完成一些基本操作，很多功能都不具备。  null和undefined
+ null属于对象（object）的一种，意思是该对象为空；undefined则是一种数据类型，表示未定义。 在编程实践中，null几乎没用，根本不应该设计它。  全局变量难以控制
+ Javascript的全局变量，在所有模块中都是可见的；任何一个函数内部都可以生成全局变量，这大大加剧了程序的复杂性。  自动插入行尾分号
+ Javascript的所有语句，都必须以分号结尾。但是，如果你忘记加分号，解释器并不报错，而是为你自动加上分号。有时候，这会导致一些难以发现的错误。  加号运算符
+ +号作为运算符，有两个含义，可以表示数字与数字的和，也可以表示字符与字符的连接。
+ 如果一个操作项是字符，另一个操作项是数字，则数字自动转化为字符。
+ 这样的设计，不必要地加剧了运算的复杂性，完全可以另行设置一个字符连接的运算符。
+  NaN</description>
+    </item>
+    
+    <item>
+      <title>HTTP 相关</title>
+      <link>https://forduke.github.io/post/http-url/</link>
+      <pubDate>Tue, 05 Nov 2019 14:37:36 +0800</pubDate>
+      
+      <guid>https://forduke.github.io/post/http-url/</guid>
+      <description>HTTP (HyperText Transfer Protoco) 超文本传输协议（HTTP）是一个用于传输超媒体文档（例如 HTML）的应用层协议。
+URL 概览 以百度搜索 hello 为例
+https://www.baidu.com/s?wd=hello&amp;amp;rsv_spt=1#5
+协议+域名或 IP+端口号+路径+查询参数+锚点  协议： http:// 是协议。它表明了浏览器必须使用何种协议。它通常都是 HTTP 协议或是 HTTP 协议的安全版，即 HTTPS。Web 需要它们二者之一，但浏览器也知道如何处理其他协议，比如 mailto:（打开邮件客户端）或者 ftp:（处理文件传输）。 域名： www.baidu.com 是域名。它表明正在请求哪个 Web 服务器。 端口： HTTP 协议的标准端口（HTTP 为 80，HTTPS 为 443）通常都不用写，也不会展示。 路径： 上图没有展示，是网络服务器上资源的路径。 查询参数： ?wd=hello&amp;amp;rsv_spt 是提供给网络服务器的额外参数。参数用 &amp;amp; 符号分隔的键/值对列表。 锚点 锚点表示资源中的一种“书签”，给浏览器显示位于该“加书签”位置的内容的方向。注意！＃后面的部分（也称为片段标识符）从来没有发送到请求的服务器。  DNS 域名系统（服务）协议（DNS）是一种分布式网络目录服务，主要用于域名与 IP 地址的相互转换，以及控制因特网的电子邮件的发送。DNS 使用 TCP 和 UDP 端口 53。对于每一级域名长度的限制是 63 个字符，域名总长度则不能超过 253 个字符。
+nslookup 我查了下这个命令有点多，暂时用不上，如果查网站 IP 就直接 nslookup baidu.com IP 细节暂时未深入研究~后面学习了再补上</description>
+    </item>
+    
+    <item>
+      <title>浏览器渲染 和 css animation</title>
+      <link>https://forduke.github.io/post/css-animation/</link>
+      <pubDate>Mon, 04 Nov 2019 17:16:49 +0800</pubDate>
+      
+      <guid>https://forduke.github.io/post/css-animation/</guid>
+      <description>一、浏览器渲染原理个人理解 CSSOM 树和 DOM 树合并成渲染树，然后用于计算每个可见元素的布局，并输出给绘制流程，将像素渲染到屏幕上。
+ DOM 树与 CSSOM 树合并后形成渲染树。 渲染树只包含渲染网页所需的节点。 布局计算每个对象的精确位置和大小。 最后一步是绘制，使用最终渲染树将像素渲染到屏幕上。  第一步是让浏览器将 DOM 和 CSSOM 合并成一个“渲染树”，网罗网页上所有可见的 DOM 内容，以及每个节点的所有 CSSOM 样式信息。
+为构建渲染树，浏览器大体上完成了下列工作：
+ 从 DOM 树的根节点开始遍历每个可见节点。 某些节点不可见（例如脚本标记、元标记等），因为它们不会体现在渲染输出中，所以会被忽略。 某些节点通过 CSS 隐藏，因此在渲染树中也会被忽略，例如，上例中的 span 节点&amp;mdash;不会出现在渲染树中，&amp;mdash;因为有一个显式规则在该节点上设置了“display: none”属性。 对于每个可见节点，为其找到适配的 CSSOM 规则并应用它们。 发射可见节点，连同其内容和计算的样式。  简要概述浏览器完成的步骤：
+ 处理 HTML 标记并构建 DOM 树。 处理 CSS 标记并构建 CSSOM 树。 将 DOM 与 CSSOM 合并成一个渲染树。 根据渲染树来布局，以计算每个节点的几何信息。 将各个节点绘制到屏幕上。  css transition 过渡 作用
+补充中间帧
+语法
+ transition: 属性名 时长 过渡方式 延迟 transition: left 200ms linear 可以用逗号分隔两个不同属性 transition: left 200ms, top 400ms 可以用 all 代表所有属性 transition: all 200ms 过渡方式有: linear | ease | ease-in | ease-out | ease-in-out | cubic-bezier 等  注意：不是所有属性都能过渡</description>
+    </item>
+    
+    <item>
+      <title>HTML重点标签</title>
+      <link>https://forduke.github.io/post/html-label-important/</link>
+      <pubDate>Thu, 24 Oct 2019 10:17:03 +0800</pubDate>
+      
+      <guid>https://forduke.github.io/post/html-label-important/</guid>
+      <description>1. a 标签的用法？ href
+ 要打开的链接，为空的话会刷新页面，&amp;rdquo;#&amp;ldquo;不刷新、但会滚动到顶部 网址：
+ https://google.com http://google.com //google.com (无协议网址)  路径
+ /a/b/c ( 绝对路径，“/”我理解是服务器开项目后的根目录) a/b/c （相对路径，在当前目录找） index.html 以及 ./index.html （在当前目录找）  伪协议
+ javascript:代码; （无效的点击事件，不会刷新页面，不会滚动到顶部） #xxx （跳转到 id=xxx 的标签） mailto:邮箱 （打开邮件） tel:手机 （）   target
+ 在哪个窗口打开链接，默认为当前页面 属性  &amp;ldquo;_blank&amp;rdquo; ：空白页面打开，新窗口 &amp;ldquo;_top&amp;rdquo;：顶层窗口打开 &amp;ldquo;_parent&amp;rdquo;：当前链接所在的 iframe 打开（谷歌不允许在 iframe 打开） &amp;ldquo;_self&amp;rdquo;：当前页面 也可以作为名字，每次跳转都会在相同窗口打开，window 的 name，iframe 的 name   download
+ 下载网页，一般用的不多  rel=noopener
+ 防止 BUG，不知道是啥  2.</description>
+    </item>
+    
+    <item>
+      <title>HTML入门笔记</title>
+      <link>https://forduke.github.io/post/html-introduce/</link>
+      <pubDate>Tue, 22 Oct 2019 18:32:05 +0800</pubDate>
+      
+      <guid>https://forduke.github.io/post/html-introduce/</guid>
+      <description>HTML 是？
+ 上个世纪 90 年代由欧洲核子研究中心的物理学家蒂姆·伯纳斯-李（Tim Berners-Lee）发明，叫李爵士就行。  HTML 起手？
+ ! + tab 或 回车   常用的表章节的标签?
+ article : 表示独立结构，可独立分配或复用 section : 新的章节 header : 头部 footer : 脚部 main : 主要内容 aside : 旁支内容  全局属性有哪些?
+ class
+ 类名  contenteditable
+ 可编辑内容； head 标签的内容不可见，但 style 标签可以放在 body 内，加上这个属性就可以编辑样式  hidden
+ 隐藏标签内容  id
+ id 如果重复出现，不会报错，尽量不用； #xxx [ id=xxx ] ； id 可以在 JS 里直接使用，xxx.</description>
+    </item>
+    
+    <item>
+      <title>Hugo搭建博客和Github预览</title>
+      <link>https://forduke.github.io/post/hugo/</link>
+      <pubDate>Tue, 22 Oct 2019 15:45:41 +0800</pubDate>
+      
+      <guid>https://forduke.github.io/post/hugo/</guid>
+      <description> 一、使用 Hugo 快速搭建博客  Hugo 官网 根据 Quick Start 操作，过程就不赘述了   先下载 Hugo，我没有使用命令行操作，直接下载的程序 hugo 程序 然后在系统环境变量里添加地址  根据官网提供的命令行操作  创建博客页面，运行项目  创建项目的目录结构、博客页面、配置文件  生成好的博客网站   </description>
+    </item>
+    
+    <item>
+      <title>First Blog</title>
+      <link>https://forduke.github.io/post/first-blog/</link>
+      <pubDate>Tue, 22 Oct 2019 13:45:41 +0800</pubDate>
+      
+      <guid>https://forduke.github.io/post/first-blog/</guid>
+      <description>开博大吉 坚持就是胜利！</description>
     </item>
     
   </channel>

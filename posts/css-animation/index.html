@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>浏览器渲染 和 css animation :: 小侃流年的博客 — 小侃流年的博客</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="一、浏览器渲染原理个人理解 CSSOM 树和 DOM 树合并成渲染树，然后用于计算每个可见元素的布局，并输出给绘制流程，将像素渲染到屏幕上。
+ DOM 树与 CSSOM 树合并后形成渲染树。 渲染树只包含渲染网页所需的节点。 布局计算每个对象的精确位置和大小。 最后一步是绘制，使用最终渲染树将像素渲染到屏幕上。  第一步是让浏览器将 DOM 和 CSSOM 合并成一个“渲染树”，网罗网页上所有可见的 DOM 内容，以及每个节点的所有 CSSOM 样式信息。
+为构建渲染树，浏览器大体上完成了下列工作：
+ 从 DOM 树的根节点开始遍历每个可见节点。 某些节点不可见（例如脚本标记、元标记等），因为它们不会体现在渲染输出中，所以会被忽略。 某些节点通过 CSS 隐藏，因此在渲染树中也会被忽略，例如，上例中的 span 节点&amp;mdash;不会出现在渲染树中，&amp;mdash;因为有一个显式规则在该节点上设置了“display: none”属性。 对于每个可见节点，为其找到适配的 CSSOM 规则并应用它们。 发射可见节点，连同其内容和计算的样式。  简要概述浏览器完成的步骤：
+ 处理 HTML 标记并构建 DOM 树。 处理 CSS 标记并构建 CSSOM 树。 将 DOM 与 CSSOM 合并成一个渲染树。 根据渲染树来布局，以计算每个节点的几何信息。 将各个节点绘制到屏幕上。  css transition 过渡 作用
+补充中间帧
+语法
+ transition: 属性名 时长 过渡方式 延迟 transition: left 200ms linear 可以用逗号分隔两个不同属性 transition: left 200ms, top 400ms 可以用 all 代表所有属性 transition: all 200ms 过渡方式有: linear | ease | ease-in | ease-out | ease-in-out | cubic-bezier 等  注意：不是所有属性都能过渡"/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="https://forduke.github.io/posts/css-animation/" />
+
+
+
+
+
+<link rel="stylesheet" href="https://forduke.github.io/assets/style.css">
+
+
+<link rel="stylesheet" href="https://forduke.github.io/style.css">
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://forduke.github.io/img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="https://forduke.github.io/img/favicon.png">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="浏览器渲染 和 css animation"/>
+<meta name="twitter:description" content="一、浏览器渲染原理个人理解 CSSOM 树和 DOM 树合并成渲染树，然后用于计算每个可见元素的布局，并输出给绘制流程，将像素渲染到屏幕上。
+ DOM 树与 CSSOM 树合并后形成渲染树。 渲染树只包含渲染网页所需的节点。 布局计算每个对象的精确位置和大小。 最后一步是绘制，使用最终渲染树将像素渲染到屏幕上。  第一步是让浏览器将 DOM 和 CSSOM 合并成一个“渲染树”，网罗网页上所有可见的 DOM 内容，以及每个节点的所有 CSSOM 样式信息。
+为构建渲染树，浏览器大体上完成了下列工作：
+ 从 DOM 树的根节点开始遍历每个可见节点。 某些节点不可见（例如脚本标记、元标记等），因为它们不会体现在渲染输出中，所以会被忽略。 某些节点通过 CSS 隐藏，因此在渲染树中也会被忽略，例如，上例中的 span 节点&mdash;不会出现在渲染树中，&mdash;因为有一个显式规则在该节点上设置了“display: none”属性。 对于每个可见节点，为其找到适配的 CSSOM 规则并应用它们。 发射可见节点，连同其内容和计算的样式。  简要概述浏览器完成的步骤：
+ 处理 HTML 标记并构建 DOM 树。 处理 CSS 标记并构建 CSSOM 树。 将 DOM 与 CSSOM 合并成一个渲染树。 根据渲染树来布局，以计算每个节点的几何信息。 将各个节点绘制到屏幕上。  css transition 过渡 作用
+补充中间帧
+语法
+ transition: 属性名 时长 过渡方式 延迟 transition: left 200ms linear 可以用逗号分隔两个不同属性 transition: left 200ms, top 400ms 可以用 all 代表所有属性 transition: all 200ms 过渡方式有: linear | ease | ease-in | ease-out | ease-in-out | cubic-bezier 等  注意：不是所有属性都能过渡"/>
+
+
+
+<meta property="og:title" content="浏览器渲染 和 css animation" />
+<meta property="og:description" content="一、浏览器渲染原理个人理解 CSSOM 树和 DOM 树合并成渲染树，然后用于计算每个可见元素的布局，并输出给绘制流程，将像素渲染到屏幕上。
+ DOM 树与 CSSOM 树合并后形成渲染树。 渲染树只包含渲染网页所需的节点。 布局计算每个对象的精确位置和大小。 最后一步是绘制，使用最终渲染树将像素渲染到屏幕上。  第一步是让浏览器将 DOM 和 CSSOM 合并成一个“渲染树”，网罗网页上所有可见的 DOM 内容，以及每个节点的所有 CSSOM 样式信息。
+为构建渲染树，浏览器大体上完成了下列工作：
+ 从 DOM 树的根节点开始遍历每个可见节点。 某些节点不可见（例如脚本标记、元标记等），因为它们不会体现在渲染输出中，所以会被忽略。 某些节点通过 CSS 隐藏，因此在渲染树中也会被忽略，例如，上例中的 span 节点&mdash;不会出现在渲染树中，&mdash;因为有一个显式规则在该节点上设置了“display: none”属性。 对于每个可见节点，为其找到适配的 CSSOM 规则并应用它们。 发射可见节点，连同其内容和计算的样式。  简要概述浏览器完成的步骤：
+ 处理 HTML 标记并构建 DOM 树。 处理 CSS 标记并构建 CSSOM 树。 将 DOM 与 CSSOM 合并成一个渲染树。 根据渲染树来布局，以计算每个节点的几何信息。 将各个节点绘制到屏幕上。  css transition 过渡 作用
+补充中间帧
+语法
+ transition: 属性名 时长 过渡方式 延迟 transition: left 200ms linear 可以用逗号分隔两个不同属性 transition: left 200ms, top 400ms 可以用 all 代表所有属性 transition: all 200ms 过渡方式有: linear | ease | ease-in | ease-out | ease-in-out | cubic-bezier 等  注意：不是所有属性都能过渡" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forduke.github.io/posts/css-animation/" />
+<meta property="article:published_time" content="2019-11-04T17:16:49+08:00" />
+<meta property="article:modified_time" content="2019-11-04T17:16:49+08:00" /><meta property="og:site_name" content="小侃流年的博客" />
+
+
+
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">小侃流年的博客</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/posts/about/">About</a></li>
+        
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+      
+        <ul class="menu__sub-inner">
+          <li class="menu__sub-inner-more-trigger">
+            Show more
+            <span class="menu__sub-inner-more-trigger-icon"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+</svg>
+</span>
+          </li>
+
+          <ul class="menu__sub-inner-more hidden">
+            
+              
+                <li><a href="/showcase">Showcase</a></li>
+              
+            
+          </ul>
+        </ul>
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/posts/about/">About</a></li>
+      
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/showcase">Showcase</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  <div class="post">
+    <h2 class="post-title"><a href="https://forduke.github.io/posts/css-animation/">浏览器渲染 和 css animation</a></h2>
+    <div class="post-meta">
+      
+        <span class="post-date">
+            2019-11-04
+        </span>
+      
+      
+      
+    </div>
+
+    
+
+    
+
+    <div class="post-content">
+      
+
+<h3 id="一-浏览器渲染原理个人理解">一、浏览器渲染原理个人理解</h3>
+
+<p>CSSOM 树和 DOM 树合并成渲染树，然后用于计算每个可见元素的布局，并输出给绘制流程，将像素渲染到屏幕上。</p>
+
+<ul>
+<li>DOM 树与 CSSOM 树合并后形成渲染树。</li>
+<li>渲染树只包含渲染网页所需的节点。</li>
+<li>布局计算每个对象的精确位置和大小。</li>
+<li>最后一步是绘制，使用最终渲染树将像素渲染到屏幕上。</li>
+</ul>
+
+<p>第一步是让浏览器将 DOM 和 CSSOM 合并成一个“渲染树”，网罗网页上所有可见的 DOM 内容，以及每个节点的所有 CSSOM 样式信息。</p>
+
+<p><img src="/image/animation/animation-1.png" alt="树图" /></p>
+
+<p>为构建渲染树，浏览器大体上完成了下列工作：</p>
+
+<ul>
+<li>从 DOM 树的根节点开始遍历每个可见节点。</li>
+<li>某些节点不可见（例如脚本标记、元标记等），因为它们不会体现在渲染输出中，所以会被忽略。
+某些节点通过 CSS 隐藏，因此在渲染树中也会被忽略，例如，上例中的 span 节点&mdash;不会出现在渲染树中，&mdash;因为有一个显式规则在该节点上设置了“display: none”属性。
+对于每个可见节点，为其找到适配的 CSSOM 规则并应用它们。</li>
+<li>发射可见节点，连同其内容和计算的样式。</li>
+</ul>
+
+<p>简要概述浏览器完成的步骤：</p>
+
+<ol>
+<li>处理 HTML 标记并构建 DOM 树。</li>
+<li>处理 CSS 标记并构建 CSSOM 树。</li>
+<li>将 DOM 与 CSSOM 合并成一个渲染树。</li>
+<li>根据渲染树来布局，以计算每个节点的几何信息。</li>
+<li>将各个节点绘制到屏幕上。</li>
+</ol>
+
+<hr />
+
+<h3 id="css-transition-过渡">css transition 过渡</h3>
+
+<p><strong>作用</strong></p>
+
+<p>补充中间帧</p>
+
+<p><strong>语法</strong></p>
+
+<ul>
+<li>transition: 属性名 时长 过渡方式 延迟</li>
+<li>transition: left 200ms linear</li>
+<li>可以用逗号分隔两个不同属性</li>
+<li>transition: left 200ms, top 400ms</li>
+<li>可以用 all 代表所有属性</li>
+<li>transition: all 200ms</li>
+<li>过渡方式有: linear | ease | ease-in | ease-out | ease-in-out | cubic-bezier 等</li>
+</ul>
+
+<p><strong>注意：不是所有属性都能过渡</strong></p>
+
+<ul>
+<li>display:none=&gt;block 不能过渡</li>
+<li>一般改成 visibility:hidden=&gt;visible</li>
+<li>过渡必须有起始</li>
+</ul>
+
+<hr />
+
+<h3 id="css-animation">css animation</h3>
+
+<p><strong>语法</strong></p>
+
+<p><strong>animation</strong>: 时长|过渡方式|延迟|次数|方向|填充模式|是否暂停|动画名</p>
+
+<ul>
+<li>时长: 1S 或 1000ms</li>
+<li>过渡方式: 跟 transition 取值一样，如 linear</li>
+<li>次数: 3 或 2.4 或 infinite</li>
+<li>方向: normal | reverse | alternate | alternate-reverse</li>
+<li>填充模式: none | forwards | backwards | both</li>
+<li>是否暂停: running | paused</li>
+</ul>
+
+<p><strong>注意：不是所有属性都能过渡</strong></p>
+
+<ul>
+<li>display:none=&gt;block 不能过渡</li>
+<li>一般改成 visibility:hidden=&gt;visible</li>
+<li>过渡必须有起始</li>
+</ul>
+
+    </div>
+    
+      
+        <div class="pagination">
+          <div class="pagination__title">
+            <span class="pagination__title-h">Read other posts</span>
+            <hr />
+          </div>
+          <div class="pagination__buttons">
+            
+              <span class="button previous">
+                <a href="https://forduke.github.io/posts/http-url/">
+                  <span class="button__icon">←</span>
+                  <span class="button__text">HTTP 相关</span>
+                </a>
+              </span>
+            
+            
+              <span class="button next">
+                <a href="https://forduke.github.io/posts/html-label-important/">
+                  <span class="button__text">HTML重点标签</span>
+                  <span class="button__icon">→</span>
+                </a>
+              </span>
+            
+          </div>
+        </div>
+      
+    
+    
+
+    
+      
+        
+
+      
+    
+    
+    </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">小侃流年的博客</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+      <div class="copyright">
+        <span>© 2020 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span>
+      </div>
+    
+  </div>
+</footer>
+
+<script src="https://forduke.github.io/assets/main.js"></script>
+<script src="https://forduke.github.io/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

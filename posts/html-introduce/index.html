@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>HTML入门笔记 :: 小侃流年的博客 — 小侃流年的博客</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="HTML 是？
+ 上个世纪 90 年代由欧洲核子研究中心的物理学家蒂姆·伯纳斯-李（Tim Berners-Lee）发明，叫李爵士就行。  HTML 起手？
+ ! &#43; tab 或 回车   常用的表章节的标签?
+ article : 表示独立结构，可独立分配或复用 section : 新的章节 header : 头部 footer : 脚部 main : 主要内容 aside : 旁支内容  全局属性有哪些?
+ class
+ 类名  contenteditable
+ 可编辑内容； head 标签的内容不可见，但 style 标签可以放在 body 内，加上这个属性就可以编辑样式  hidden
+ 隐藏标签内容  id
+ id 如果重复出现，不会报错，尽量不用； #xxx [ id=xxx ] ； id 可以在 JS 里直接使用，xxx."/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="https://forduke.github.io/posts/html-introduce/" />
+
+
+
+
+
+<link rel="stylesheet" href="https://forduke.github.io/assets/style.css">
+
+
+<link rel="stylesheet" href="https://forduke.github.io/style.css">
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://forduke.github.io/img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="https://forduke.github.io/img/favicon.png">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="HTML入门笔记"/>
+<meta name="twitter:description" content="HTML 是？
+ 上个世纪 90 年代由欧洲核子研究中心的物理学家蒂姆·伯纳斯-李（Tim Berners-Lee）发明，叫李爵士就行。  HTML 起手？
+ ! &#43; tab 或 回车   常用的表章节的标签?
+ article : 表示独立结构，可独立分配或复用 section : 新的章节 header : 头部 footer : 脚部 main : 主要内容 aside : 旁支内容  全局属性有哪些?
+ class
+ 类名  contenteditable
+ 可编辑内容； head 标签的内容不可见，但 style 标签可以放在 body 内，加上这个属性就可以编辑样式  hidden
+ 隐藏标签内容  id
+ id 如果重复出现，不会报错，尽量不用； #xxx [ id=xxx ] ； id 可以在 JS 里直接使用，xxx."/>
+
+
+
+<meta property="og:title" content="HTML入门笔记" />
+<meta property="og:description" content="HTML 是？
+ 上个世纪 90 年代由欧洲核子研究中心的物理学家蒂姆·伯纳斯-李（Tim Berners-Lee）发明，叫李爵士就行。  HTML 起手？
+ ! &#43; tab 或 回车   常用的表章节的标签?
+ article : 表示独立结构，可独立分配或复用 section : 新的章节 header : 头部 footer : 脚部 main : 主要内容 aside : 旁支内容  全局属性有哪些?
+ class
+ 类名  contenteditable
+ 可编辑内容； head 标签的内容不可见，但 style 标签可以放在 body 内，加上这个属性就可以编辑样式  hidden
+ 隐藏标签内容  id
+ id 如果重复出现，不会报错，尽量不用； #xxx [ id=xxx ] ； id 可以在 JS 里直接使用，xxx." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://forduke.github.io/posts/html-introduce/" />
+<meta property="article:published_time" content="2019-10-22T18:32:05+08:00" />
+<meta property="article:modified_time" content="2019-10-22T18:32:05+08:00" /><meta property="og:site_name" content="小侃流年的博客" />
+
+
+
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">小侃流年的博客</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/posts/about/">About</a></li>
+        
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+      
+        <ul class="menu__sub-inner">
+          <li class="menu__sub-inner-more-trigger">
+            Show more
+            <span class="menu__sub-inner-more-trigger-icon"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+</svg>
+</span>
+          </li>
+
+          <ul class="menu__sub-inner-more hidden">
+            
+              
+                <li><a href="/showcase">Showcase</a></li>
+              
+            
+          </ul>
+        </ul>
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/posts/about/">About</a></li>
+      
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/showcase">Showcase</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  <div class="post">
+    <h2 class="post-title"><a href="https://forduke.github.io/posts/html-introduce/">HTML入门笔记</a></h2>
+    <div class="post-meta">
+      
+        <span class="post-date">
+            2019-10-22
+        </span>
+      
+      
+      
+    </div>
+
+    
+
+    
+
+    <div class="post-content">
+      <ol>
+<li><p>HTML 是？</p>
+
+<ul>
+<li>上个世纪 90 年代由欧洲核子研究中心的物理学家蒂姆·伯纳斯-李（Tim Berners-Lee）发明，叫李爵士就行。</li>
+</ul></li>
+
+<li><p>HTML 起手？</p>
+
+<ul>
+<li>! + tab 或 回车
+<img src="/image/html/html-start.png" alt="看图" /></li>
+</ul></li>
+
+<li><p>常用的表章节的标签?</p>
+
+<ul>
+<li>article : 表示独立结构，可独立分配或复用</li>
+<li>section : 新的章节</li>
+<li>header : 头部</li>
+<li>footer : 脚部</li>
+<li>main : 主要内容</li>
+<li>aside : 旁支内容</li>
+</ul></li>
+
+<li><p>全局属性有哪些?</p>
+
+<ul>
+<li><p>class</p>
+
+<ul>
+<li>类名</li>
+</ul></li>
+
+<li><p>contenteditable</p>
+
+<ul>
+<li>可编辑内容；</li>
+<li>head 标签的内容不可见，但 style 标签可以放在 body 内，加上这个属性就可以编辑样式</li>
+</ul></li>
+
+<li><p>hidden</p>
+
+<ul>
+<li>隐藏标签内容</li>
+</ul></li>
+
+<li><p>id</p>
+
+<ul>
+<li>id 如果重复出现，不会报错，尽量不用；</li>
+<li>#xxx [ id=xxx ] ；</li>
+<li>id 可以在 JS 里直接使用，xxx.style.border = &lsquo;1px solid red&rsquo; ；</li>
+<li>id 不能和关键字（window.xxx）相同，否则无效</li>
+</ul></li>
+
+<li><p>style</p>
+
+<ul>
+<li>行内样式，参考优先级：</li>
+</ul></li>
+
+<li><p>tabindex</p>
+
+<ul>
+<li>控制键盘 tab 操作的顺序，响应键盘事件</li>
+<li>0 是最后顺序，-1 是跳过、不访问</li>
+</ul></li>
+
+<li><p>title</p>
+
+<ul>
+<li>鼠标放在内容上的提示</li>
+</ul></li>
+</ul></li>
+</ol>
+
+<p>1) 常用的内容标签有哪些？</p>
+
+<ul>
+<li><p>ol+li</p>
+
+<ul>
+<li>ordered list 有序列表</li>
+<li>ol 里只能有 li</li>
+</ul></li>
+
+<li><p>ul+li</p>
+
+<ul>
+<li>unordered list 无序列表</li>
+</ul></li>
+
+<li><p>dl+dt+dd</p>
+
+<ul>
+<li>dl:description list</li>
+<li>dt:term：一个概念，被描述的词</li>
+<li>dd:描述的东西</li>
+</ul></li>
+
+<li><p>pre</p>
+
+<ul>
+<li>html 默认为多个空格、回车会被缩为 1 个空格</li>
+<li>pre 标签会保留多个空格、回车，一般&lt; code &gt;会用</li>
+</ul></li>
+
+<li><p>hr</p>
+
+<ul>
+<li>分割线</li>
+</ul></li>
+
+<li><p>br</p>
+
+<ul>
+<li>换行</li>
+</ul></li>
+
+<li><p>a</p>
+
+<ul>
+<li>target 属性，默认为当前页面</li>
+<li>&ldquo;_self&rdquo; ：当前页面</li>
+<li>&ldquo;_blank&rdquo;：新窗口</li>
+<li>&ldquo;_parent&rdquo;：当前框架里打开，如果没有，同_self</li>
+<li>&ldquo;_top&rdquo;：加载的响应成完整的，原来的窗口，取消所有其它 frame。</li>
+</ul></li>
+
+<li><p>em</p>
+
+<ul>
+<li>语气强调重要性</li>
+</ul></li>
+
+<li><p>strong</p>
+
+<ul>
+<li>本身很重要</li>
+</ul></li>
+</ul>
+
+    </div>
+    
+      
+        <div class="pagination">
+          <div class="pagination__title">
+            <span class="pagination__title-h">Read other posts</span>
+            <hr />
+          </div>
+          <div class="pagination__buttons">
+            
+              <span class="button previous">
+                <a href="https://forduke.github.io/posts/html-label-important/">
+                  <span class="button__icon">←</span>
+                  <span class="button__text">HTML重点标签</span>
+                </a>
+              </span>
+            
+            
+              <span class="button next">
+                <a href="https://forduke.github.io/posts/hugo/">
+                  <span class="button__text">Hugo搭建博客和Github预览</span>
+                  <span class="button__icon">→</span>
+                </a>
+              </span>
+            
+          </div>
+        </div>
+      
+    
+    
+
+    
+      
+        
+
+      
+    
+    
+    </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">小侃流年的博客</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+      <div class="copyright">
+        <span>© 2020 Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+        <span>Theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span>
+      </div>
+    
+  </div>
+</footer>
+
+<script src="https://forduke.github.io/assets/main.js"></script>
+<script src="https://forduke.github.io/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>
